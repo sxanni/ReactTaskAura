@@ -37,6 +37,11 @@ body {
   margin-bottom: 20px;
 }
 
+.login-container{
+  -webkit-box-shadow: 0px 0px 14px -8px #000000; 
+  box-shadow: 0px 0px 14px -8px #000000;
+}
+
 .login-btn{
   transition: transform .4s ease-in-out;
 
@@ -54,7 +59,7 @@ left: 315px;
 top: 909px;
 }
 
-.btn {
+.btn1 {
   display: inline-block;
   background: #000;
   color: #fff;
@@ -68,16 +73,17 @@ top: 909px;
   font-family: inherit;
 }
 
-.btn:hover {
+.btn1:hover {
   display: inline-block;
   background: rgb(0, 0, 0);
+  color:#fff
 }
 
-.btn:focus {
+.btn1:focus {
   outline: none;
 }
 
-.btn:active {
+.btn1:active {
   transform: scale(0.98);
 }
 
@@ -114,6 +120,7 @@ top: 909px;
 
 .form-control label {
   display: block;
+
 }
 
 .form-control input {
@@ -122,6 +129,10 @@ top: 909px;
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: black
+
 }
 
 .form-control-check {
@@ -149,6 +160,11 @@ code {
     monospace;
 }
 
+.avatar{
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
 
 .circle-btn-add{
 /* 

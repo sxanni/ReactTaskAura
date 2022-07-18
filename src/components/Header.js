@@ -24,6 +24,7 @@ const Header = ({ title }) => {
 
             <Button onClick={onClick} color='' text='Profile' src={avatar} />
             </div>
+
     </header>
   ) 
 }

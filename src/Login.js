@@ -9,8 +9,8 @@ import {Container, Row, Col, Button, Alert, Breadcrumb, Card, Form} from 'react-
 const Login = () => {
   return (
     
-     <div>
-      <header className="">
+     <div className='login-container'>
+      <header className="mt-5">
       <img src={logoblk} className="App-logo" alt="logo" />
       <h1 className='mb-5'>TaskAura</h1>
       </header>
@@ -28,7 +28,7 @@ const Login = () => {
           <Form.Control type='password' placeholder='123@gmail.com'></Form.Control>
         </Form.Group>
     </Form> */}
-      <Button className='login-btn btn btn-dark m-3 py-2 px-4 w-sm-25' > Signin with Google <img className=' ml-5' style={{width:'30px', marginLeft:'10px'}} src={glogo}></img></Button>
+      <Button className='login-btn google btn btn-dark m-3 py-2 px-4 w-sm-25' > Signin with Google <img className=' ml-5' style={{width:'30px', marginLeft:'10px'}} src={glogo}></img></Button>
       
 
     </div>

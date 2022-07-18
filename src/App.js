@@ -1,14 +1,16 @@
 import logo from './img/logo-light.png';
-import Tasks from './components/Tasks';
 import logoblk from './img/logo-blk.png';
 import glogo from './img/google.png';
 import Signin from "./Signin";
-import Home from "./Home";
 import Login from "./Login";
 import Header from "./components/Header";
-import NavBar from './components/NavBar';
+import Home from "./Home";
+import Tasks from './components/Tasks';
+import AddTask from "./components/AddTask";
+import Profile from "./components/Profile";
+import Collection from "./components/Collection";
 import './App.css';
-// import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Button, Alert, Breadcrumb, Card, Form} from 'react-bootstrap';
 import { useState } from "react";
@@ -58,29 +60,34 @@ const App = () => {
   }
   return (
 <div className='App container'> 
-<div>
+{/* <div> */}
 
-  <Login/>
   <Header title='TaskAura'/>
+  <AddTask />
+  <Login/>
   {/* pass in props to tasks below within <Tasks/> component tag-> passed for  prop (tasks), prop(onToggle) connected to toggleReminder function in App.js /&/ prop(ondelete) conected to deleteTask function in app.js */}
   
   {tasks.length> 0 ? ( // wrap <Tasks/> in a fuunction stating :- if number of tasks in array > 0
   <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>): //display <Tasks/> else display message below
    ('You have no tasks. Add one to strengthen your aura!')} 
-</div>
+{/* </div> */}
 
 
 
-    
-     
-    {/* </header> */} 
 
-    {/* <BrowserRouter>
-    <Routes>
-      <Route exact path="/" e  lement={<Signin />} />
-      <Route path="/addtask" element={<Addtask />} />
-    </Routes>
-  </BrowserRouter> */}
+
+ <BrowserRouter>
+ <div>
+   <Header/>
+ <Routes>
+   <Route exact path="/" element={<Home />} />
+   <Route path="/login" element={<Login />} />
+   <Route path="/addTask" element={<AddTask />} />
+   <Route path="/profile" element={<Profile />} />
+   <Route path="/collection" element={<Collection />} />
+ </Routes>
+ </div>
+</BrowserRouter> 
     </div>
 
   );

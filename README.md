@@ -1,8 +1,21 @@
-# Getting Started with Create React App
+# TASK AURA [Productivity For Gamers]
+
+A ToDo list which rewards users completed goals with xp used in training collectable pets.
+
+
+## Key mechanics
+
+ Will contain aspects of:-
+
+ -pet rearing
+ -pet growth 
+ -LVL up elements 
+ -evolution 
+ -move/attack learning.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
 
 In the project directory, you can run:
 
