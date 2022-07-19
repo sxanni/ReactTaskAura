@@ -2,31 +2,43 @@
 
 A ToDo list which rewards users completed goals with xp used in training collectable pets.
 
+## SCREENSHOTS
 
-## Key mechanics
 
- Will contain aspects of:-
 
- -pet rearing
- -pet growth 
- -LVL up elements 
- -evolution 
- -move/attack learning.
+
+## Key technologies
+-Html/CSS/ JAVASCRIPT
+-REACT
+-Bootstrap
+-Firebase
+-OAUTH and Passport
+-GitHub
+-Figma
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
+### `GETTING STARTED`
 
-In the project directory, you can run:
+This is the Figma containing all Application planning and user reasearch
+Open [TaskAura Figma](https://www.figma.com/file/vh7mWzH1fFFs0jKBX9tn2w/TaskAura-TODO-App?node-id=222%3A345) to view it in your browser.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###  `NEXT STEPS`
+User Experience Will contain aspects of:-
+ -Task tracking/Reminder notifications
+ -Collection growing based on consistency milestones (streaks)
+ -pet rearing
+ -pet growth 
+ -LVL up elements 
+ -evolution 
+ -move/attack learning??(maybe, dont want to stray away from completing tasks being the main goal, having attacks might distract user by having them playing too long in the app.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
+
+-------------------------------------------------------------------------------------------
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
