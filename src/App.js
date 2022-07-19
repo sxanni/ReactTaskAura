@@ -71,9 +71,15 @@ const App = () => {
 <div className='App container'> 
 {/* <div> */}
     {/* //header title set in (title='') and also onAdd set to change setshowAddTask TO the opposite of whatever it currently is, which is false by default */}
+  <Login/>
   <Header title='TaskAura' onAdd={() => setShowAddTask (!showAddTask)} showAdd={showAddTask} />
   
-  <Login/>
+    {/* //wrap where you AddTask in conditional dependent on showAddTask state declared in the head */}
+
+{showAddTask && //this means- If showAddTask is true, display <AddTask/>
+<AddTask onAdd={addTask}/> 
+}
+
   {/* pass in props to tasks below within <Tasks/> component tag-> passed for  prop (tasks), prop(onToggle) connected to toggleReminder function in App.js /&/ prop(ondelete) conected to deleteTask function in app.js */}
   
   {tasks.length> 0 ? ( // wrap <Tasks/> in a fuunction stating :- if number of tasks in array > 0
@@ -81,11 +87,7 @@ const App = () => {
    ('You have no tasks. Add one to strengthen your aura!')} 
 {/* </div> */}
 
-{/* //wrap where you AddTask in conditional dependent on showAddTask state declared in the head */}
 
-{showAddTask && //this means- If showAddTask is true, display <AddTask/>
-<AddTask onAdd={addTask}/> 
-}
 
 
 

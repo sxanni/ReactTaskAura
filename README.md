@@ -25,6 +25,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is the Figma containing all Application planning and user reasearch
 Open [TaskAura Figma](https://www.figma.com/file/vh7mWzH1fFFs0jKBX9tn2w/TaskAura-TODO-App?node-id=222%3A345) to view it in your browser.
 
+This is the pages link to the site 
+[TaskAura Pages](https://sxanni.github.io/ReactTaskAura/)
+
 
 ###  `NEXT STEPS`
 User Experience Will contain aspects of:-
