@@ -2,7 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { IoMdAddCircle } from "react-icons/io";
 
-const AddBtn = ({ color, text, onClick, src }) => {
+const AddBtn = ({ color, text, onClick, src, showAdd }) => {
+  const style = {
+    width: "42px",
+    height: "42px",
+    color: "black",
+    cursor: "pointer",
+    position:'fixed',
+    right: '45px',bottom: '95px',
+    transform: showAdd ? 'rotate(45deg)' : '', 
+    transition: 'transform 150ms ease', // smooth transition
+   }
   return (
     //profile avatar styling below
     <button
@@ -11,16 +21,8 @@ const AddBtn = ({ color, text, onClick, src }) => {
       className="circle-btn-add btn btn-outline-dark rounded-circle "
     >
       <IoMdAddCircle
-        style={{
-
-            // width: '42', height: '42', marginLeft:'auto',   color:'black', cursor: 'pointer',display:'flex', justifyContent:'flex-between', alignContent:'flex-between'
-          width: "42px",
-          height: "42px",
-          color: "black",
-          cursor: "pointer",
-          position:'fixed',
-          right: '45px',bottom: '95px'
-        }}
+      
+        style={style}
         // onClick={onDelete}
         //to pass id in onClick event call a function and then call onDelete before passing in the task.id
       />

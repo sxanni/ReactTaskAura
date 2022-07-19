@@ -16,6 +16,8 @@ import {Container, Row, Col, Button, Alert, Breadcrumb, Card, Form} from 'react-
 import { useState } from "react";
 
 const App = () => {
+
+  const [showAddTask, setShowAddTask] = useState(false)// to connect AddBtn, first create new function/The addTask form will  now be dependent on this piece of state/
   const [tasks, setTasks] = useState( //setTasks is how we trigger state of tasks
     [
       {
@@ -45,6 +47,13 @@ const App = () => {
     ]
   )
 
+  //Function to (ADD TASK)
+  const addTask = (task) => {
+    console.log(task);
+    const id =  Math.floor(Math.random() * 10000) + 1 //create mock id which is randomized, rounded down number( for when not dealing with database)
+    const newTask = {id, ...task }// add new task as object with above id, copy of (task) contents
+    setTasks([...tasks, newTask]) // trigger set task to set it as copy of current tasks and also add newTask contents
+  }
   //create function to handle Toggling reminder style on tasks
   const toggleReminder = (id) => {
     console.log('reminder toggled', id)// and its going to output a console log of 'reminder toggled' & the id value
@@ -61,9 +70,9 @@ const App = () => {
   return (
 <div className='App container'> 
 {/* <div> */}
-
-  <Header title='TaskAura'/>
-  <AddTask />
+    {/* //header title set in (title='') and also onAdd set to change setshowAddTask TO the opposite of whatever it currently is, which is false by default */}
+  <Header title='TaskAura' onAdd={() => setShowAddTask (!showAddTask)} showAdd={showAddTask} />
+  
   <Login/>
   {/* pass in props to tasks below within <Tasks/> component tag-> passed for  prop (tasks), prop(onToggle) connected to toggleReminder function in App.js /&/ prop(ondelete) conected to deleteTask function in app.js */}
   
@@ -72,11 +81,17 @@ const App = () => {
    ('You have no tasks. Add one to strengthen your aura!')} 
 {/* </div> */}
 
+{/* //wrap where you AddTask in conditional dependent on showAddTask state declared in the head */}
+
+{showAddTask && //this means- If showAddTask is true, display <AddTask/>
+<AddTask onAdd={addTask}/> 
+}
 
 
 
 
- <BrowserRouter>
+
+ {/* <BrowserRouter>
  <div>
    <Header/>
  <Routes>
@@ -87,7 +102,7 @@ const App = () => {
    <Route path="/collection" element={<Collection />} />
  </Routes>
  </div>
-</BrowserRouter> 
+</BrowserRouter>  */}
     </div>
 
   );

@@ -1,16 +1,24 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 import icon from "../img/logo-blk.png";
-import avatar from '../img/avatar.jpg'
+import avatar from '../img/avatar.jpg';
+import AddBtn from './AddBtn';
 
 
-const Header = ({ title }) => {
+
+const Header = ({ title, onAdd, showAdd }) => {
+    const style = {
+        transform: showAdd ? 'rotate(90deg)' : '', 
+        transition: 'transform 150ms ease', // smooth transition
+       }
     //function to handle onclick
     const onClick = () => {
         console.log('open profile page Click')
     }
   return (
-    <header style={{zIndex: '100'}} className='header mt-4 border p-2'>
+    < >
+    <div style={{zIndex:'10'}}>
+    <header  className='header mt-4 border p-2'>
         <div className='d-flex flex-row justify-items-start align-items-center'>
 
         <img className=" p-0 " style={{objectFit: 'cover', width: '120px'}} src={icon}/>
@@ -22,10 +30,18 @@ const Header = ({ title }) => {
         </div>
             <div className=' circle-btn-header rounded-circle border  '>
 
-            <Button onClick={onClick} color='' text='Profile' src={avatar} />
+            <Button onClick={onClick} color='' text='' src={avatar} />
             </div>
 
     </header>
+
+    <div className=' circle-btn-add rounded-circle border  '>
+      <AddBtn onClick={onAdd} color={showAdd ? 'red': 'white'} style={style} text='' src='' showAdd={showAdd} />      
+      </div>
+      </div>
+    </>
+
+    
   ) 
 }
 

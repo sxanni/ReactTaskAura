@@ -1,14 +1,16 @@
 import React from 'react';
+import AddBtn from './components/AddBtn';
 import Header from './components/Header'
-import Task from './components/Task'
+import Tasks from './components/Tasks'
 
 
 const Home = () => {
   return (
-    <div>
+    <div >
 
         <Header/>
-        <Task />
+        <Tasks />
+        <AddBtn/>
     </div>
         
 

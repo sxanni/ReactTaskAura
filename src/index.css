@@ -95,12 +95,14 @@ top: 909px;
 .task {
   background: #f4f4f4;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 2px 4px;
   cursor: pointer;
+
 }
 
 .task.reminder {
   border-left: 5px solid green;
+  border-bottom: 3px solid green;
 }
 
 .task h3 {
