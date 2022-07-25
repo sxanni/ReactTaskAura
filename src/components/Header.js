@@ -6,6 +6,7 @@ import AddBtn from './AddBtn';
 
 
 
+
 const Header = ({ title, onAdd, showAdd }) => {
     const style = {
         transform: showAdd ? 'rotate(90deg)' : '', 
@@ -21,7 +22,7 @@ const Header = ({ title, onAdd, showAdd }) => {
     <header  className='header mt-4 border p-2'>
         <div className='d-flex flex-row justify-items-start align-items-center'>
 
-        <img className=" p-0 " style={{objectFit: 'cover', width: '120px'}} src={icon}/>
+        <img className=" p-0 " style={{objectFit: 'cover', width: '70px'}} src={icon}/>
             <h1 >
                 
                 {title}

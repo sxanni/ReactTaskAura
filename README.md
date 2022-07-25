@@ -4,7 +4,8 @@ A ToDo list which rewards users completed goals with xp used in training collect
 
 ## SCREENSHOTS
 
-
+[Screenshot1](Screenshot1.png)
+[Screenshot2](Screenshot2.png)
 
 
 ## Key technologies

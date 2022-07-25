@@ -1,3 +1,8 @@
+// import firebase from "./firebase-config";
+import {db} from "./firebase-config";
+import {collection, getDocs} from "firebase/firestore";
+import "@firebase/firestore";
+
 import logo from './img/logo-light.png';
 import logoblk from './img/logo-blk.png';
 import glogo from './img/google.png';
@@ -13,11 +18,28 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Button, Alert, Breadcrumb, Card, Form} from 'react-bootstrap';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
 
+  
   const [showAddTask, setShowAddTask] = useState(false)// to connect AddBtn, first create new function/The addTask form will  now be dependent on this piece of state/
+  const tasksCollectionRef = collection(db, "tasks");
+
+  useEffect(() => {
+  
+    const getTasks = async () => {
+
+      const data = await getDocs(tasksCollectionRef)
+      setTasks(data.docs.map((doc) => ({...doc.data(), id: doc.id})))//setting tasks array to include a loop through of
+      // console.log('yadaa')
+
+    }
+
+    getTasks()
+    
+  }, [])
+  
   const [tasks, setTasks] = useState( //setTasks is how we trigger state of tasks
     [
       {
@@ -47,9 +69,11 @@ const App = () => {
     ]
   )
 
+
   //Function to (ADD TASK)
-  const addTask = (task) => {
+  const addTask = async (task) => {
     console.log(task);
+    
     const id =  Math.floor(Math.random() * 10000) + 1 //create mock id which is randomized, rounded down number( for when not dealing with database)
     const newTask = {id, ...task }// add new task as object with above id, copy of (task) contents
     setTasks([...tasks, newTask]) // trigger set task to set it as copy of current tasks and also add newTask contents
@@ -67,6 +91,10 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== id)) //.filter is an array method for getting a portion of an array that comes through function parameters( in this cae, if the task.id is not =(!==) id) this essentially deletes it
     console.log('delete', id)// and its going to output a console log of 'delete' & the id value
   }
+
+
+ 
+  
   return (
 <div className='App container'> 
 {/* <div> */}
@@ -77,7 +105,7 @@ const App = () => {
     {/* //wrap where you AddTask in conditional dependent on showAddTask state declared in the head */}
 
 {showAddTask && //this means- If showAddTask is true, display <AddTask/>
-<AddTask onAdd={addTask}/> 
+<AddTask tasksCollectionRef={tasksCollectionRef} onAdd={addTask}/> 
 }
 
   {/* pass in props to tasks below within <Tasks/> component tag-> passed for  prop (tasks), prop(onToggle) connected to toggleReminder function in App.js /&/ prop(ondelete) conected to deleteTask function in app.js */}
@@ -88,7 +116,7 @@ const App = () => {
 {/* </div> */}
 
 
-
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
 
 

@@ -1,14 +1,23 @@
 import React from "react";
 import { useState } from "react";
-// import Header from "./components/Header";
+import {collection, getDocs, addDoc} from "firebase/firestore";
+import "@firebase/firestore";
 
-const AddTask = ({onAdd}) => {
-  // component level states to handle form values
+
+
+const AddTask = ({onAdd, tasksCollectionRef}) => {
+  // component level states to handle and grab form values to be sent to database
+  // const [id, setId] = useState("");
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false); //state for check box to always initially be unchecked
 
-    const onSubmit = (e) => { //onsubmit function taking in event object (e)
+  
+  const createTask = async () => { //async to deal with making request to database
+    await addDoc(tasksCollectionRef, {text:text, day:day, reminder:reminder})//addDoc function takes in reference collection and object containing data to be added tocollection
+}; //BIGGEST BUG WAS ABOVE  HERE, I HAD PUT text: setText instead of text: text etc, putting wrong values :'( 
+    
+const onSubmit = (e) => { //onsubmit function taking in event object (e)
         e.preventDefault() //prevent it from submitting to a page
 
         //if there is no text value in input
@@ -24,42 +33,49 @@ const AddTask = ({onAdd}) => {
         setDay('')
         setReminder(false)//set checkbox to uncheck aka false
 
+
+
     }
 
   return (
     <div>
       {/* <Header/> */}
-      <form className="add-form" onSubmit={onSubmit}>
+      <form id="addForm" className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
           <label>Task</label>
+          <input type="hidden" id="hiddenId"/>
           <input
+            id="taskTxt"
             type="text"
             placeholder="Add Task"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(event) => {setText(event.target.value)}} 
           />
         </div>
         <div className="form-control">
           <label>Day & Time</label>
           <input
+            id="day"
             type="text"
             placeholder="Add Day & time"
             value={day}
-            onChange={(e) => setDay(e.target.value)}
+            onChange={(event) => {setDay(event.target.value)}}
           />
         </div>
         <div className="form-control-check">
           <label>Set Reminder</label>
           <input
+            id="reminder"
             type="checkbox"
             checked={reminder}
             placeholder="Add Task"
             value={reminder}
-            onChange={(e) => setReminder(e.currentTarget.checked)}
+            onChange={(event) => {setReminder(event.currentTarget.checked)}}
           />
         </div>
 
         <input
+        onClick={createTask} 
           type="submit"
           value="Save Task"
           className="btn btn-outline-dark w-100 d-block mt-5"
