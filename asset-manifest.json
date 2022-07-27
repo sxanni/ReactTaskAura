@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.931f37cd.css",
-    "main.js": "/static/js/main.ffb19a0c.js",
-    "static/js/787.3eef81f4.chunk.js": "/static/js/787.3eef81f4.chunk.js",
-    "static/media/avatar.jpg": "/static/media/avatar.6fd83ea20cb2ba2567d7.jpg",
-    "static/media/logo-light.png": "/static/media/logo-light.7a83d5bb9567eb6b579b.png",
-    "static/media/logo-blk.png": "/static/media/logo-blk.dfb7c9a25d3dcace63ec.png",
-    "static/media/google.png": "/static/media/google.23d7e8b37501e99225c2.png",
-    "index.html": "/index.html",
-    "main.931f37cd.css.map": "/static/css/main.931f37cd.css.map",
-    "main.ffb19a0c.js.map": "/static/js/main.ffb19a0c.js.map",
-    "787.3eef81f4.chunk.js.map": "/static/js/787.3eef81f4.chunk.js.map"
+    "main.css": "/ReactTaskAura/static/css/main.931f37cd.css",
+    "main.js": "/ReactTaskAura/static/js/main.cb6ced5b.js",
+    "static/js/787.3eef81f4.chunk.js": "/ReactTaskAura/static/js/787.3eef81f4.chunk.js",
+    "static/media/avatar.jpg": "/ReactTaskAura/static/media/avatar.6fd83ea20cb2ba2567d7.jpg",
+    "static/media/logo-light.png": "/ReactTaskAura/static/media/logo-light.7a83d5bb9567eb6b579b.png",
+    "static/media/logo-blk.png": "/ReactTaskAura/static/media/logo-blk.dfb7c9a25d3dcace63ec.png",
+    "static/media/google.png": "/ReactTaskAura/static/media/google.23d7e8b37501e99225c2.png",
+    "index.html": "/ReactTaskAura/index.html",
+    "main.931f37cd.css.map": "/ReactTaskAura/static/css/main.931f37cd.css.map",
+    "main.cb6ced5b.js.map": "/ReactTaskAura/static/js/main.cb6ced5b.js.map",
+    "787.3eef81f4.chunk.js.map": "/ReactTaskAura/static/js/787.3eef81f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.931f37cd.css",
-    "static/js/main.ffb19a0c.js"
+    "static/js/main.cb6ced5b.js"
   ]
 }
