@@ -1,6 +1,6 @@
 // import firebase from "./firebase-config";
 import {db} from "./firebase-config";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, doc, getDocs, updateDoc} from "firebase/firestore";
 import "@firebase/firestore";
 
 import logo from './img/logo-light.png';
@@ -79,11 +79,17 @@ const App = () => {
     setTasks([...tasks, newTask]) // trigger set task to set it as copy of current tasks and also add newTask contents
   }
   //create function to handle Toggling reminder style on tasks
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id, reminder) => {
     console.log('reminder toggled', id)// and its going to output a console log of 'reminder toggled' & the id value
     setTasks(tasks.map((task) => task.id === id ? //if/where the task.id is eaqual to id
     { ...task, reminder: !task.reminder } // copy an object with all the task properties and value bbut change the reminder:true/false to the opposite of its current value
     : task)) //else its just gonna be task( this means there will be no chage)
+
+
+    //UPDATED THE FAKING REMINDER TOGGLE BAYBEEEEEEEE!!!!  I AM ZE CODER *Jose Mourinho voice*
+    const taskDoc = doc(db, "tasks", id)
+    const newFields = {reminder: !reminder}
+    await updateDoc(taskDoc, newFields)  
   }
 
   // create function for handling deleting of tasksdelete task 

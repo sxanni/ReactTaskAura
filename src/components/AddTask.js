@@ -12,7 +12,7 @@ const AddTask = ({onAdd, tasksCollectionRef}) => {
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false); //state for check box to always initially be unchecked
 
-  
+  //below function adds/creates new task docu,ent to database
   const createTask = async () => { //async to deal with making request to database
     await addDoc(tasksCollectionRef, {text:text, day:day, reminder:reminder})//addDoc function takes in reference collection and object containing data to be added tocollection
 }; //BIGGEST BUG WAS ABOVE  HERE, I HAD PUT text: setText instead of text: text etc, putting wrong values :'( 

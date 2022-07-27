@@ -4,8 +4,12 @@ A ToDo list which rewards users completed goals with xp used in training collect
 
 ## SCREENSHOTS
 
-[Screenshot1](Screenshot1.png)
-[Screenshot2](Screenshot2.png)
+1.[Screenshot1](Screenshot1.png)
+
+
+
+2.[Screenshot2](Screenshot2.png)
+
 
 
 ## Key technologies
@@ -42,7 +46,7 @@ User Experience Will contain aspects of:-
 
 
 
--------------------------------------------------------------------------------------------
+-------------------------------0--0--0--( ENDING )--0--0--0------------------------------------------------
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
